@@ -12,6 +12,12 @@ type AES256 struct {
 	Key [32]byte
 }
 
+func NewAES256(key [32]byte) *AES256 {
+	return &AES256{
+		Key: key,
+	}
+}
+
 // getKey 获取AES加密块
 func (c *AES256) getKey() (cipher.Block, error) {
 	// 使用AES-256创建加密块
